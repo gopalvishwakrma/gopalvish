@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gopal</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="universal_container">
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="#aboutme">ABOUT</a></li>
+                    <li><a href="#skills">SKILLS</a></li>
+                    <li><a href="#projects">PROJECTS</a></li>
+                    <li><a href="#experience">EXPERIENCE</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Home screen -->
+        <div class="homescreen">
+            <div class="introduction">
+                <div class="text">
+                    <p><span style="font-size: 10rem; text-shadow: 0 0 0.5rem #F2613F;">GOPAL</span>
+                        <br> <span
+                            style="font-size: 4.2rem; background-color: #F2613F; text-shadow: 0 0 0.7rem #0C0C0C">VISHWAKARMA</span>
+                        <br> <span style="font-size: 2.1rem; text-decoration: none; text-shadow: 0 0 0.2rem #F2613F;"
+                            class="typewriter">PASSIONATE
+                            TECH ENTHUSIAST</span>
+                    </p>
+                </div>
+                <div class="scrollicon">
+                    <p><i>Scroll Down</i> <br><span class="material-symbols-outlined">mouse</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Me -->
+        <div id="aboutme" class="aboutme1">
+            <div class="aboutme2">
+                <div class="heading">
+                    <p>ABOUT ME</p>
+                </div>
+                <div class="aboutme_content">
+                    <div class="left_aboutme">
+                        <p>A third-year computer science student who is passionate in both web and native Android
+                            development. My programming experience has led me to specialize in these areas, specifically
+                            using Kotlin for Android apps. Through hands-on experience and academic projects, I've
+                            developed
+                            problem-solving abilities and a strong eye for innovation. I thrive in collaborative
+                            workplaces
+                            and am excited to help create cutting-edge digital solutions. As I continue my journey, I am
+                            pleased about the possibility to broaden my knowledge and make significant contributions to
+                            the
+                            field of technology. With each new challenge, I'm inspired to push boundaries, learn, and
+                            invent, with the goal of leaving a lasting impression on the tech sector.
+                        </p>
+                    </div>
+                    <div class="right_aboutme">
+                        <img src="assets/Gopal with blazer.jpg" alt="aboutme_profile_img">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div id="skills" class="skill">
+            <div class="skills2">
+                <div class="heading">
+                    <p style="color: white;">SKILLS</p>
+                </div>
+                <div class="skill_container">
+                    <div class="skill_item">
+                        <img src="assets/web_bg_img.jpg" alt="Web Frontend">
+                        <div class="content">
+                            <h3>WEB FRONTEND</h3>
+                            <p>Skilled in developing responsive, development knowledge, producing quality work and
+                                visually appealing web interfaces using HTML, CSS, and JavaScript.</p>
+                        </div>
+                    </div>
+                    <div class="skill_item">
+                        <img src="assets/kotlin_andriod_img.png" alt="Native Android">
+                        <div class="content">
+                            <h3>Native Android</h3>
+                            <p>Capable of developing native Android applications using Kotlin, with knowledge of Android
+                                SDK and modern app development practices.</p>
+                        </div>
+                    </div>
+                    <div class="skill_item">
+                        <img src="assets/devops_automation.jpg" alt="DevOps">
+                        <div class="content">
+                            <h3>DevOps</h3>
+                            <p>Familiar with various DevOps tools and practices, including continuous
+                                integration/continuous deployment (CI/CD) pipelines.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="projects" class="project">
+            <div class="project2">
+                <div class="heading">
+                    <p>PROJECTS</p>
+                </div>
+                <div class="project_items">
+
+                    <div class="carousel">
+                        <div class="carousel-item">
+                            <div class="slide-image" style="background-image:  
+            url('assets/cafe.jpg');">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="slide-image" style="background-image:  
+            url('assets/networking.jpg');">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="slide-image" style="background-image:  
+            url('assets/travel.jpg');">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="slide-image" style="background-image:  
+            url('https://media.geeksforgeeks.org/img-practice/banner/gate-crash-course-2024-thumbnail.png?v=19625');">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom: 20vh;" class="footer"></div>
+    </div>
+    <script>
+        window.onload = function () {
+            let slides =
+                document.getElementsByClassName('carousel-item');
+
+            function addActive(slide) {
+                slide.classList.add('active');
+            }
+
+            function removeActive(slide) {
+                slide.classList.remove('active');
+            }
+
+            addActive(slides[0]);
+            setInterval(function () {
+                for (let i = 0; i < slides.length; i++) {
+                    if (i + 1 == slides.length) {
+                        addActive(slides[0]);
+                        setTimeout(removeActive, 350, slides[i]);
+                        break;
+                    }
+                    if (slides[i].classList.contains('active')) {
+                        setTimeout(removeActive, 350, slides[i]);
+                        addActive(slides[i + 1]);
+                        break;
+                    }
+                }
+            }, 1500);
+        };
+
+    </script>
+</body>
+
+</html>
