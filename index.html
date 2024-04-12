@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gopal</title>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 
@@ -54,14 +51,12 @@
                         <p>A third-year computer science student who is passionate in both web and native Android
                             development. My programming experience has led me to specialize in these areas, specifically
                             using Kotlin for Android apps. Through hands-on experience and academic projects, I've
-                            developed
-                            problem-solving abilities and a strong eye for innovation. I thrive in collaborative
-                            workplaces
-                            and am excited to help create cutting-edge digital solutions. As I continue my journey, I am
-                            pleased about the possibility to broaden my knowledge and make significant contributions to
-                            the
-                            field of technology. With each new challenge, I'm inspired to push boundaries, learn, and
-                            invent, with the goal of leaving a lasting impression on the tech sector.
+                            developed problem-solving abilities and a strong eye for innovation. I thrive in
+                            collaborative workplaces and am excited to help create cutting-edge digital solutions. As I
+                            continue my journey, I am pleased about the possibility to broaden my knowledge and make
+                            significant contributions to the field of technology. With each new challenge, I'm inspired
+                            to push boundaries, learn, and invent, with the goal of leaving a lasting impression on the
+                            tech sector.
                         </p>
                     </div>
                     <div class="right_aboutme">
@@ -129,48 +124,15 @@
             url('assets/travel.jpg');">
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="slide-image" style="background-image:  
-            url('https://media.geeksforgeeks.org/img-practice/banner/gate-crash-course-2024-thumbnail.png?v=19625');">
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div style="margin-bottom: 20vh;" class="footer"></div>
     </div>
-    <script>
-        window.onload = function () {
-            let slides =
-                document.getElementsByClassName('carousel-item');
 
-            function addActive(slide) {
-                slide.classList.add('active');
-            }
-
-            function removeActive(slide) {
-                slide.classList.remove('active');
-            }
-
-            addActive(slides[0]);
-            setInterval(function () {
-                for (let i = 0; i < slides.length; i++) {
-                    if (i + 1 == slides.length) {
-                        addActive(slides[0]);
-                        setTimeout(removeActive, 350, slides[i]);
-                        break;
-                    }
-                    if (slides[i].classList.contains('active')) {
-                        setTimeout(removeActive, 350, slides[i]);
-                        addActive(slides[i + 1]);
-                        break;
-                    }
-                }
-            }, 1500);
-        };
-
-    </script>
+    <script src="index.js"></script>
+    
 </body>
 
 </html>

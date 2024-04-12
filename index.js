@@ -1,27 +1,28 @@
-const imgs = Array.from(document.getElementsByClassName('carousel'));
-        const rightBtn = document.getElementById('right-btn');
-        const leftBtn = document.getElementById('left-btn');
+window.onload = function () {
+    let slides =
+        document.getElementsByClassName('carousel-item');
 
-        let position = 0;
+    function addActive(slide) {
+        slide.classList.add('active');
+    }
 
-        // Initially, show the first image and hide others
-        imgs.forEach((img, index) => {
-            img.style.display = index === position ? 'block' : 'none';
-        });
+    function removeActive(slide) {
+        slide.classList.remove('active');
+    }
 
-        const moveRight = () => {
-            position = (position + 1) % imgs.length;
-            imgs.forEach((img, index) => {
-                img.style.display = index === position ? 'block' : 'none';
-            });
+    addActive(slides[0]);
+    setInterval(function () {
+        for (let i = 0; i < slides.length; i++) {
+            if (i + 1 == slides.length) {
+                addActive(slides[0]);
+                setTimeout(removeActive, 350, slides[i]);
+                break;
+            }
+            if (slides[i].classList.contains('active')) {
+                setTimeout(removeActive, 350, slides[i]);
+                addActive(slides[i + 1]);
+                break;
+            }
         }
-
-        const moveLeft = () => {
-            position = (position - 1 + imgs.length) % imgs.length;
-            imgs.forEach((img, index) => {
-                img.style.display = index === position ? 'block' : 'none';
-            });
-        }
-
-        rightBtn.addEventListener("click", moveRight);
-        leftBtn.addEventListener("click", moveLeft);
+    }, 1500);
+};
